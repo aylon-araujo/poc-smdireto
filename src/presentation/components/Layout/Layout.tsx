@@ -216,7 +216,7 @@ export default function MiniDrawer({
                     sx={{ opacity: open ? 1 : 0 }}
                   />
                   {open && item.children ? (
-                    itemOpen[item.description] ? (
+                    itemOpen[item.description as keyof typeof itemOpen] ? (
                       <KeyboardArrowUpIcon />
                     ) : (
                       <KeyboardArrowDownIcon />
@@ -226,7 +226,7 @@ export default function MiniDrawer({
               </ListItem>
               {item.children && open ? (
                 <Collapse
-                  in={itemOpen[item.description]}
+                  in={itemOpen[item.description as keyof typeof itemOpen]}
                   timeout="auto"
                   unmountOnExit
                 >
