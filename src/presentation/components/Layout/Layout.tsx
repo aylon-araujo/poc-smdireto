@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { styled, useTheme, Theme, CSSObject } from "@mui/material/styles";
 import MuiDrawer from "@mui/material/Drawer";
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
@@ -23,9 +22,11 @@ import {
   ListItem,
   Stack,
   Avatar,
+  Link,
 } from "@mui/material";
 
 import { SidebarList as list } from "./SidebarList";
+import { AppRouter } from "../../../routes";
 import {
   AppBarProps,
   LayoutProps,
@@ -175,7 +176,9 @@ export default function MiniDrawer({
         <DrawerHeader>
           <div style={{ width: "10rem", textAlign: "center" }}>
             <Typography variant="h6">Aylon A.</Typography>
-            <Typography variant="subtitle2">Editar perfil</Typography>
+            <Link href="/editar-perfil">
+              <Typography variant="subtitle2">Editar perfil</Typography>
+            </Link>
           </div>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "rtl" ? (
@@ -190,12 +193,13 @@ export default function MiniDrawer({
           {list.map((item) => (
             <>
               <ListItem
-                key={item.id}
+                key={item.name}
                 disablePadding
                 sx={{ display: "block" }}
                 onClick={() => handleClick(item.description)}
               >
                 <ListItemButton
+                  onClick={item.onClick}
                   sx={{
                     minHeight: 48,
                     justifyContent: open ? "initial" : "center",
@@ -224,7 +228,7 @@ export default function MiniDrawer({
                   ) : null}
                 </ListItemButton>
               </ListItem>
-              {item.children && open ? (
+              {item.children ? (
                 <Collapse
                   in={itemOpen[item.description as keyof typeof itemOpen]}
                   timeout="auto"
@@ -245,6 +249,7 @@ export default function MiniDrawer({
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
+        <AppRouter />
       </Box>
     </Box>
   );
