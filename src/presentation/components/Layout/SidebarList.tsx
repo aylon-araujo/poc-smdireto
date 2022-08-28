@@ -16,12 +16,14 @@ export const SidebarList = [
     name: "Dashboard",
     description: "dashboard",
     icon: DashboardIcon,
+    onClick: () => (window.location.href = "/dashboard"),
   },
   {
     id: Math.floor(Math.random() * 100),
     name: "Pedidos",
     description: "icon",
     icon: LocalMallIcon,
+    onClick: () => (window.location.href = "/pedidos"),
   },
   {
     id: Math.floor(Math.random() * 100),
@@ -120,5 +122,6 @@ export const SidebarList = [
     name: "Sair",
     description: "icon",
     icon: MeetingRoomIcon,
+    onClick: () => (window.location.href = "/"),
   },
 ];
