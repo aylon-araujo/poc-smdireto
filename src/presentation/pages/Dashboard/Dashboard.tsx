@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { Paper, Typography, Grid } from "@mui/material";
-import ReactApexChart from "react-apexcharts";
 import { makeStyles, createStyles } from "@mui/styles";
 
 import ComboBox from "../../components/ComboBox";
 import Card from "../../components/Card";
+import DashboardChart from "../../components/Chart";
 
 const useStyles = makeStyles((theme: any) =>
   createStyles({
@@ -22,103 +22,20 @@ const useStyles = makeStyles((theme: any) =>
   })
 );
 
+const dataChart = [
+  {
+    name: "Concluido",
+    data: [123],
+  },
+  {
+    name: "Em aberto",
+    data: [1450],
+  },
+];
+
 const Dashboard = () => {
-  const [width, setWidth] = useState<number>(window.innerWidth);
-  const isMobile = width <= 768;
-
-  function handleWindowSizeChange() {
-    setWidth(window.innerWidth);
-  }
-
-  useEffect(() => {
-    window.addEventListener("resize", handleWindowSizeChange);
-    return () => {
-      window.removeEventListener("resize", handleWindowSizeChange);
-    };
-  }, []);
-
-  const [chart] = useState({
-    series: [
-      {
-        name: "Concluido",
-        data: [123],
-      },
-      {
-        name: "Em aberto",
-        data: [1450],
-      },
-    ],
-    options: {
-      chart: {
-        toolbar: {
-          show: true,
-          offsetX: 0,
-          offsetY: 0,
-          tools: {
-            download: true,
-            selection: true,
-            zoom: true,
-            zoomin: true,
-            zoomout: true,
-            pan: true,
-            // reset: true | '<img src="/static/icons/reset.png" width="20">',
-            customIcons: [],
-          },
-          export: {
-            csv: {
-              filename: "sm-relatorio",
-              columnDelimiter: ";",
-              headerCategory: "category",
-              headerValue: "value",
-              dateFormatter(timestamp: Date) {
-                return new Date(timestamp).toDateString();
-              },
-            },
-            svg: {
-              filename: "sm-relatorio",
-            },
-            png: {
-              filename: "sm-relatorio",
-            },
-          },
-          autoSelected: "zoom",
-        },
-      },
-      plotOptions: {
-        bar: {
-          horizontal: false,
-        },
-      },
-      dataLabels: {
-        enabled: true,
-      },
-      stroke: {
-        width: 1,
-        colors: ["#fff"],
-      },
-      xaxis: {
-        categories: ["Concluido", "Em aberto"],
-        labels: {
-          show: false,
-        },
-      },
-      responsive: [
-        {
-          breakpoint: 1000,
-          options: {
-            plotOptions: {
-              bar: {
-                horizontal: true,
-              },
-            },
-          },
-        },
-      ],
-    },
-  });
-
-  const { series, options } = chart;
   const classes = useStyles();
+
   return (
     <>
       <Grid container spacing={8} className={classes.root}>
@@ -129,12 +46,7 @@ const Dashboard = () => {
           <ComboBox size="small" fullWidth />
         </Grid>
         <Grid item xs={12} md={8}>
-          <Paper>
-            <Typography align="center" variant="h6">
-              Potencial de vendas (Alunos)
-            </Typography>
-            <ReactApexChart series={series} options={options} type="bar" />
-          </Paper>
+          <DashboardChart series={dataChart} />
         </Grid>
         <Grid item container direction="column" xs={12} md={4} spacing={4}>
           <Grid item>
