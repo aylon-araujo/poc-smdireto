@@ -27,6 +27,12 @@ const Layout = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (isMobile) {
+      setOpen(false);
+    }
+  }, []);
+
   const handleDrawerOpen = () => {
     setOpen(true);
   };
