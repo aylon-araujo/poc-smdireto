@@ -228,7 +228,7 @@ export default function MiniDrawer({
                   ) : null}
                 </ListItemButton>
               </ListItem>
-              {item.children ? (
+              {item.children && open ? (
                 <Collapse
                   in={itemOpen[item.description as keyof typeof itemOpen]}
                   timeout="auto"

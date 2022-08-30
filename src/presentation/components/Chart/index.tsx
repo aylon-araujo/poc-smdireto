@@ -7,6 +7,7 @@ interface SerieProps {
 }
 
 type Props = {
+  chartTitle: string;
   series: SerieProps[];
 };
 
@@ -24,7 +25,6 @@ const chart = {
           zoomin: true,
           zoomout: true,
           pan: true,
-          // reset: true | '<img src="/static/icons/reset.png" width="20">',
           customIcons: [],
         },
         export: {
@@ -33,9 +33,6 @@ const chart = {
             columnDelimiter: ";",
             headerCategory: "category",
             headerValue: "value",
-            dateFormatter(timestamp: Date) {
-              return new Date(timestamp).toDateString();
-            },
           },
           svg: {
             filename: "sm-relatorio",
@@ -44,7 +41,6 @@ const chart = {
             filename: "sm-relatorio",
           },
         },
-        autoSelected: "zoom",
       },
     },
     plotOptions: {
@@ -80,13 +76,13 @@ const chart = {
   },
 };
 
-const DashboardChart = ({ series }: Props) => {
+const DashboardChart: React.FC<Props> = ({ series, chartTitle }) => {
   const { options } = chart;
 
   return (
     <Paper>
-      <Typography align="center" variant="h6">
-        Potencial de vendas (Alunos)
+      <Typography align="center" variant="h6" style={{ paddingTop: "1rem" }}>
+        {chartTitle}
       </Typography>
       <ReactApexChart series={series} options={options} type="bar" />
     </Paper>
