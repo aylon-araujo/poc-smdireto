@@ -10,7 +10,7 @@ export default function ComboBox(props: any) {
   return (
     <Autocomplete
       {...props}
-      style={{ marginBottom: "1rem" }}
+      style={{ marginBottom: "1rem", background: "#fff" }}
       disablePortal
       id="combo-box-demo"
       options={schools}
