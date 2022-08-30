@@ -17,7 +17,7 @@ POC SM-DIRETO
 1. Clone o projeto:
 
 ```bash
-git clone {GITHUB_URL}
+git clone https://github.com/aylon-araujo/poc-smdireto.git
 ```
 
 2. Instale as dependências:
