@@ -6,7 +6,7 @@ type ItemOpenState = {
   system: boolean | string;
 };
 
-const Layout = () => {
+const Layout: React.FC = () => {
   const [open, setOpen] = useState(true);
   const [itemOpen, setItemOpen] = useState<ItemOpenState>({
     report: false,
