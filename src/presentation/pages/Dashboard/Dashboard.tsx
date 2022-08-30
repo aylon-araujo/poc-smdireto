@@ -33,7 +33,7 @@ const dataChart = [
   },
 ];
 
-const Dashboard = () => {
+const Dashboard: React.FC = () => {
   const classes = useStyles();
 
   return (
@@ -46,7 +46,7 @@ const Dashboard = () => {
           <ComboBox size="small" fullWidth />
         </Grid>
         <Grid item xs={12} md={8}>
-          <DashboardChart series={dataChart} />
+          <DashboardChart chartTitle="Potencial de vendas (Alunos)" series={dataChart} />
         </Grid>
         <Grid item container direction="column" xs={12} md={4} spacing={4}>
           <Grid item>
