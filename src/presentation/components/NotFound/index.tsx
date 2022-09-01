@@ -1,37 +1,40 @@
-import { Box, Typography, Link } from "@mui/material";
-import { makeStyles, createStyles } from "@mui/styles";
-
-import { useNavigate } from "react-router-dom";
+import { Box, Link, Theme, Typography } from '@mui/material';
+import { createStyles, makeStyles } from '@mui/styles';
+import { useNavigate } from 'react-router-dom';
 
 interface Props {
   route: string;
 }
 
-const useStyles = makeStyles((theme: any) =>
+const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      height: "90vh",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      textAlign: "center",
+      height: '90vh',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      textAlign: 'center',
     },
     title: {
-      fontSize: "12rem !important",
-      fontWeight: "700 !important",
+      fontSize: '12rem !important',
+      fontWeight: '700 !important',
       color: theme.palette.primary.main,
     },
     subTitle: {
-      fontSize: "2rem !important",
+      fontSize: '2rem !important',
     },
     linkButton: {
-      cursor: "pointer",
-      fontWeight: "600",
+      cursor: 'pointer',
+      fontWeight: '600',
     },
-  })
+  }),
 );
 
-const NotFound: React.FC<Props> = ({ route }) => {
+type RouteProps = {
+  route: string;
+};
+
+const NotFound: React.FC<Props> = ({ route }: RouteProps) => {
   const classes = useStyles();
   const navigate = useNavigate();
 

@@ -1,4 +1,4 @@
-import Order from "../Order/Order";
+import Order from '../Order/Order';
 
 const OrderContainer: React.FC = () => {
   return <Order />;

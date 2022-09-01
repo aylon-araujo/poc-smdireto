@@ -1,16 +1,15 @@
-import TextField from "@mui/material/TextField";
-import Autocomplete from "@mui/material/Autocomplete";
+import Autocomplete from '@mui/material/Autocomplete';
+import TextField from '@mui/material/TextField';
 
 const schools = [
-  { label: "Paulista Institução de Ensino", id: 1 },
-  { label: "Colégio La Salle Abel", id: 2 },
+  { label: 'Paulista Institução de Ensino', id: 1 },
+  { label: 'Colégio La Salle Abel', id: 2 },
 ];
 
-export default function ComboBox(props: any) {
+export default function ComboBox() {
   return (
     <Autocomplete
-      {...props}
-      style={{ marginBottom: "1rem", background: "#fff" }}
+      style={{ marginBottom: '1rem', background: '#fff' }}
       disablePortal
       id="combo-box-demo"
       options={schools}

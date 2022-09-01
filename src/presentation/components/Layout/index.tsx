@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
-import PersistentDrawerLeft from "./Layout";
+import { useEffect, useState } from 'react';
+
+import PersistentDrawerLeft from './Layout';
 
 type ItemOpenState = {
   report: boolean | string;
@@ -21,9 +22,9 @@ const Layout: React.FC = () => {
   }
 
   useEffect(() => {
-    window.addEventListener("resize", handleWindowSizeChange);
+    window.addEventListener('resize', handleWindowSizeChange);
     return () => {
-      window.removeEventListener("resize", handleWindowSizeChange);
+      window.removeEventListener('resize', handleWindowSizeChange);
     };
   }, []);
 
@@ -42,7 +43,7 @@ const Layout: React.FC = () => {
   };
 
   const handleClick = (name: string) => {
-    if (name === "report" || name === "system") {
+    if (name === 'report' || name === 'system') {
       setItemOpen(() => ({
         ...itemOpen,
         [name]: !itemOpen[name],
