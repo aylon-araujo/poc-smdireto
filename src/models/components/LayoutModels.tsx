@@ -4,9 +4,9 @@ export interface AppBarProps extends MuiAppBarProps {
   open: boolean;
 }
 
-type ItemOpenState = {
-  report: boolean | string;
-  system: boolean | string;
+export type ItemOpenState = {
+  report: boolean;
+  system: boolean;
 };
 
 export interface LayoutProps {

@@ -1,11 +1,8 @@
 import { useEffect, useState } from 'react';
 
-import PersistentDrawerLeft from './Layout';
+import { ItemOpenState } from '@/models/components/LayoutModels';
 
-type ItemOpenState = {
-  report: boolean | string;
-  system: boolean | string;
-};
+import PersistentDrawerLeft from './Layout';
 
 const Layout: React.FC = () => {
   const [open, setOpen] = useState(true);

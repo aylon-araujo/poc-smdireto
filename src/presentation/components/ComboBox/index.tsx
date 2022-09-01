@@ -11,6 +11,8 @@ export default function ComboBox() {
     <Autocomplete
       style={{ marginBottom: '1rem', background: '#fff' }}
       disablePortal
+      size="small"
+      fullWidth
       id="combo-box-demo"
       options={schools}
       renderInput={(params) => (
