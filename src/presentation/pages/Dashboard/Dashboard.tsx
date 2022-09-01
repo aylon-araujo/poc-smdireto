@@ -1,34 +1,33 @@
-import { useState, useEffect } from "react";
-import { Paper, Typography, Grid } from "@mui/material";
-import { makeStyles, createStyles } from "@mui/styles";
+import { Grid, Typography } from '@mui/material';
+import { createStyles, makeStyles } from '@mui/styles';
 
-import ComboBox from "../../components/ComboBox";
-import Card from "../../components/Card";
-import DashboardChart from "../../components/Chart";
+import Card from '@/presentation/components/Card';
+import DashboardChart from '@/presentation/components/Chart';
+import ComboBox from '@/presentation/components/ComboBox';
 
-const useStyles = makeStyles((theme: any) =>
+const useStyles = makeStyles(() =>
   createStyles({
     root: {
-      padding: "18px",
+      padding: '18px',
     },
     title: {
-      marginBottonm: "1rem",
-      fontWeight: "400 !important",
-      fontSize: "1.7rem !important",
+      marginBottonm: '1rem',
+      fontWeight: '400 !important',
+      fontSize: '1.7rem !important',
     },
     tertiary: {
-      color: "#ECCC62",
+      color: '#ECCC62',
     },
-  })
+  }),
 );
 
 const dataChart = [
   {
-    name: "Concluido",
+    name: 'Concluido',
     data: [123],
   },
   {
-    name: "Em aberto",
+    name: 'Em aberto',
     data: [1450],
   },
 ];
@@ -46,7 +45,10 @@ const Dashboard: React.FC = () => {
           <ComboBox size="small" fullWidth />
         </Grid>
         <Grid item xs={12} md={8}>
-          <DashboardChart chartTitle="Potencial de vendas (Alunos)" series={dataChart} />
+          <DashboardChart
+            chartTitle="Potencial de vendas (Alunos)"
+            series={dataChart}
+          />
         </Grid>
         <Grid item container direction="column" xs={12} md={4} spacing={4}>
           <Grid item>

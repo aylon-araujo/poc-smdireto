@@ -1,0 +1,20 @@
+name: Lint Code
+
+on: pull_request
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '16.15.0'
+      - name: Install Dependencies
+        run: yarn install
+      - name: TypeScript Check
+        run: tsc
+      - name: Lint Code
+        run: yarn lint:code
+      - name: Lint Styles
+        run: yarn lint:styles

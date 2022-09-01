@@ -1,10 +1,10 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes } from 'react-router-dom';
 
-import Dashboard from "../../presentation/pages/Dashboard";
-import Order from "../../presentation/pages/Order";
-import NotFound from "../../presentation/components/NotFound";
+import NotFound from '@/presentation/components/NotFound';
+import Dashboard from '@/presentation/pages/Dashboard';
+import Order from '@/presentation/pages/Order';
 
-import { Routes as RT } from "../routes";
+import { Routes as RT } from '../routes';
 
 export function DashboardRoutes() {
   return (

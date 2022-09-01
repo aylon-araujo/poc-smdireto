@@ -1,5 +1,6 @@
-import { Paper, Typography } from "@mui/material";
-import ReactApexChart from "react-apexcharts";
+import { Paper, Typography } from '@mui/material';
+// eslint-disable-next-line import/default
+import ReactApexChart from 'react-apexcharts';
 
 interface SerieProps {
   name: string;
@@ -10,6 +11,7 @@ type Props = {
   chartTitle: string;
   series: SerieProps[];
 };
+const fileName = 'sm-direto';
 
 const chart = {
   options: {
@@ -29,16 +31,16 @@ const chart = {
         },
         export: {
           csv: {
-            filename: "sm-relatorio",
-            columnDelimiter: ";",
-            headerCategory: "category",
-            headerValue: "value",
+            filename: fileName,
+            columnDelimiter: ';',
+            headerCategory: 'category',
+            headerValue: 'value',
           },
           svg: {
-            filename: "sm-relatorio",
+            filename: fileName,
           },
           png: {
-            filename: "sm-relatorio",
+            filename: fileName,
           },
         },
       },
@@ -53,10 +55,10 @@ const chart = {
     },
     stroke: {
       width: 1,
-      colors: ["#fff"],
+      colors: ['#fff'],
     },
     xaxis: {
-      categories: ["Concluido", "Em aberto"],
+      categories: ['Concluido', 'Em aberto'],
       labels: {
         show: false,
       },
@@ -76,13 +78,14 @@ const chart = {
   },
 };
 
-const DashboardChart: React.FC<Props> = ({ series, chartTitle }) => {
+// eslint-disable-next-line react/prop-types
+const DashboardChart: React.FC<Props> = ({ series }) => {
   const { options } = chart;
 
   return (
     <Paper>
-      <Typography align="center" variant="h6" style={{ paddingTop: "1rem" }}>
-        {chartTitle}
+      <Typography align="center" variant="h6" style={{ paddingTop: '1rem' }}>
+        Potencial de vendas (Alunos)
       </Typography>
       <ReactApexChart series={series} options={options} type="bar" />
     </Paper>
