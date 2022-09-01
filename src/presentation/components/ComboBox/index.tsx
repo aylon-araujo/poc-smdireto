@@ -1,18 +1,22 @@
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 
-const schools = [
-  { label: 'Paulista Institução de Ensino', id: 1 },
-  { label: 'Colégio La Salle Abel', id: 2 },
+export const schools = [
+  { label: 'Paulista Institução de Ensino' },
+  { label: 'Colégio La Salle Abel' },
 ];
-
-export default function ComboBox() {
+interface Props {
+  onChange?: () => void;
+}
+export default function ComboBox({ onChange }: Props) {
   return (
     <Autocomplete
       style={{ marginBottom: '1rem', background: '#fff' }}
-      id="combo-box-demo"
+      id="combo-box"
+      data-testId="autocomplete"
       size="small"
       fullWidth
+      onChange={onChange}
       options={schools}
       renderInput={(params) => (
         <TextField {...params} label="Selecione uma escola" />
