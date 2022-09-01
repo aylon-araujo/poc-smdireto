@@ -42,13 +42,10 @@ const Dashboard: React.FC = () => {
           <Typography className={classes.title}>Dashboard</Typography>
         </Grid>
         <Grid item xs={12} md={5}>
-          <ComboBox size="small" fullWidth />
+          <ComboBox />
         </Grid>
         <Grid item xs={12} md={8}>
-          <DashboardChart
-            chartTitle="Potencial de vendas (Alunos)"
-            series={dataChart}
-          />
+          <DashboardChart series={dataChart} />
         </Grid>
         <Grid item container direction="column" xs={12} md={4} spacing={4}>
           <Grid item>

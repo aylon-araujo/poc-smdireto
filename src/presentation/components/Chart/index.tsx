@@ -8,9 +8,9 @@ interface SerieProps {
 }
 
 type Props = {
-  chartTitle: string;
   series: SerieProps[];
 };
+
 const fileName = 'sm-direto';
 
 const chart = {
