@@ -45,10 +45,7 @@ const Dashboard: React.FC = () => {
           <ComboBox />
         </Grid>
         <Grid item xs={12} md={8}>
-          <DashboardChart
-            chartTitle="Potencial de vendas (Alunos)"
-            series={dataChart}
-          />
+          <DashboardChart series={dataChart} />
         </Grid>
         <Grid item container direction="column" xs={12} md={4} spacing={4}>
           <Grid item>

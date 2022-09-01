@@ -10,10 +10,9 @@ export default function ComboBox() {
   return (
     <Autocomplete
       style={{ marginBottom: '1rem', background: '#fff' }}
-      disablePortal
+      id="combo-box-demo"
       size="small"
       fullWidth
-      id="combo-box-demo"
       options={schools}
       renderInput={(params) => (
         <TextField {...params} label="Selecione uma escola" />
