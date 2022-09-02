@@ -15,4 +15,4 @@
 
 > Descreva as dependências que o Pull Request precisa ter para funcionar.
 
-Relacionado à tarefa [NOME DA TAREFA NO AZURE](LINK PARA TAREFA NO AZURE).
+Relacionado à tarefa [NOME DA TAREFA NO JIRA](LINK PARA TAREFA NO JIRA).
