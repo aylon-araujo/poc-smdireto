@@ -7,8 +7,6 @@ describe('Sidenav', () => {
   });
 
   it('Shold find Order list item', () => {
-    cy.visit('/');
-
     cy.contains('Pedidos').click();
     cy.url().should('include', '/pedidos');
   });
