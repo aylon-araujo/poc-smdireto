@@ -23,10 +23,16 @@ git clone https://github.com/aylon-araujo/poc-smdireto.git
 2. Instale as dependências:
 
 ```bash
+cd poc-smdireto
+```
+
+3. Instale as dependências:
+
+```bash
 yarn
 ```
 
-3. Rodar pojeto
+4. Rodar pojeto
 
 ```bash
 yarn dev
